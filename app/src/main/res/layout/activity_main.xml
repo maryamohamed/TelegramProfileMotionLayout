@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/PrimaryConstraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_main_scene"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,8 +14,8 @@
         android:layout_height="240dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/iv_profile_image"
         android:layout_width="match_parent"
@@ -30,11 +31,11 @@
 
     <ImageView
         android:id="@+id/ic_three_dots"
+        style="@style/ProfileIcons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/ProfileIcons"
-        app:layout_constraintTop_toTopOf="@id/ProfileConstraint"
         app:layout_constraintEnd_toEndOf="@id/ProfileConstraint"
+        app:layout_constraintTop_toTopOf="@id/ProfileConstraint"
         app:srcCompat="@drawable/dots_three_vertical"
         tools:layout_editor_absoluteX="227dp" />
 
@@ -42,12 +43,12 @@
         android:id="@+id/ic_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/searchicon"
         android:layout_marginEnd="@dimen/Margin16dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/ic_three_dots"
         app:layout_constraintEnd_toStartOf="@+id/ic_three_dots"
         app:layout_constraintTop_toTopOf="@+id/ic_three_dots"
+        app:srcCompat="@drawable/searchicon"
         tools:layout_editor_absoluteX="183dp"
         tools:layout_editor_absoluteY="43dp" />
 
@@ -56,20 +57,20 @@
         android:id="@+id/ic_qrcode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="visible"
-        app:srcCompat="@drawable/qrcode"
         android:layout_marginEnd="@dimen/Margin16dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/ic_search"
         app:layout_constraintEnd_toStartOf="@+id/ic_search"
         app:layout_constraintTop_toTopOf="@+id/ic_search"
+        app:srcCompat="@drawable/qrcode"
         tools:layout_editor_absoluteX="205dp"
         tools:layout_editor_absoluteY="27dp" />
 
     <ImageView
         android:id="@+id/ic_back"
+        style="@style/ProfileIcons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/ProfileIcons"
         app:layout_constraintStart_toStartOf="@id/ProfileConstraint"
         app:layout_constraintTop_toTopOf="@id/ProfileConstraint"
         app:srcCompat="@drawable/backspace" />
@@ -456,4 +457,4 @@
                 android:textSize="@dimen/TextSize16sp" />
         </LinearLayout>
     </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>
