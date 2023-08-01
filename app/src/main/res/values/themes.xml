@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TelegramProfileMotionLayout" parent="Theme.Material3.DayNight.NoActionBar">
+    </style>
+
+    <style name="Theme.TelegramProfileMotionLayout" parent="Base.Theme.TelegramProfileMotionLayout" />
+
+    <style name="SettingsHeight">
+        <item name="android:layout_height" >@dimen/SettingsHeight </item>
+        <item name="android:gravity" >center_vertical </item>
+    </style>
+    <style name="ProfileIcons" parent="">
+        <item name="android:layout_marginStart">@dimen/Margin16dp</item>
+        <item name="android:layout_marginEnd">@dimen/Margin16dp</item>
+        <item name="android:layout_marginTop">@dimen/Margin16dp</item>
+    </style>
+    <style name="FloatingActionCorners">
+        <item name="cornerSize">55%</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+</resources>
