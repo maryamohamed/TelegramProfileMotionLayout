@@ -18,4 +18,8 @@
         <item name="cornerSize">55%</item>
         <item name="cornerFamily">rounded</item>
     </style>
+    <style name="Circular">
+        <item name="cornerSize">50%</item>
+        <item name="android:layout_marginTop">@dimen/Margin8dp</item>
+    </style>
 </resources>

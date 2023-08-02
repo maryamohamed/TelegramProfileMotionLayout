@@ -21,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@id/ProfileConstraint"
         app:layout_constraintEnd_toEndOf="@id/ProfileConstraint"
         app:layout_constraintHorizontal_bias="1.0"
@@ -29,9 +30,20 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/photo" />
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/endpoint_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="@dimen/Margin8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/photo"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/ic_back"
+        app:layout_constraintStart_toEndOf="@id/ic_back"
+        app:shapeAppearanceOverlay="@style/Circular" />
+
     <ImageView
         android:id="@+id/ic_three_dots"
-        style="@style/ProfileIcons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@id/ProfileConstraint"
@@ -43,6 +55,7 @@
         android:id="@+id/ic_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/Margin16dp"
         android:layout_marginEnd="@dimen/Margin16dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/ic_three_dots"
@@ -58,6 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/Margin16dp"
+        android:layout_marginTop="@dimen/Margin16dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/ic_search"
         app:layout_constraintEnd_toStartOf="@+id/ic_search"
@@ -78,7 +92,7 @@
     <TextView
         android:id="@+id/tv_Profile_name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:text="Maryam Mohamed"
         android:textColor="@color/white"
@@ -88,7 +102,7 @@
     <TextView
         android:id="@+id/tv_profile_status"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginBottom="@dimen/Margin16dp"
         android:text="online"
         android:textColor="@color/white"
@@ -106,7 +120,8 @@
         app:layout_constraintBottom_toBottomOf="@id/ProfileConstraint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ProfileConstraint"
-        app:shapeAppearanceOverlay="@style/FloatingActionCorners" />
+        app:shapeAppearanceOverlay="@style/FloatingActionCorners"
+        app:tint="@color/dark_gray" />
 
 
     <ScrollView
@@ -160,11 +175,15 @@
                     android:text="Tap to change Phone Number"
                     android:textColor="@color/dark_gray" />
 
-                <View
-                    android:layout_width="340dp"
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_gravity="end"
-                    android:background="@color/light_gray" />
+                    android:layout_marginStart="@dimen/Margin16dp" />
+                <!--                <View-->
+                <!--                    android:layout_width="340dp"-->
+                <!--                    android:layout_height="1dp"-->
+                <!--                    android:layout_gravity="end"-->
+                <!--                    android:background="@color/light_gray" />-->
             </LinearLayout>
 
             <LinearLayout
@@ -187,11 +206,11 @@
                     android:text="Username"
                     android:textColor="@color/dark_gray" />
 
-                <View
-                    android:layout_width="340dp"
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_gravity="end"
-                    android:background="@color/light_gray" />
+                    android:layout_marginStart="@dimen/Margin16dp"
+                    android:backgroundTint="@color/light_gray" />
 
             </LinearLayout>
 
@@ -217,11 +236,9 @@
 
             </LinearLayout>
 
-            <View
+            <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:layout_gravity="end"
-                android:background="@color/light_gray" />
+                android:layout_height="10dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -242,16 +259,16 @@
                     style="@style/SettingsHeight"
                     android:layout_width="match_parent"
                     android:layout_marginStart="@dimen/Margin16dp"
-                    android:drawablePadding="15dp"
+                    android:drawablePadding="@dimen/DrawablePadding"
                     android:text="Chat Settings"
                     app:drawableStartCompat="@drawable/chat_round"
                     app:drawableTint="@color/dark_gray" />
 
-                <View
-                    android:layout_width="307dp"
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_gravity="end"
-                    android:background="@color/light_gray" />
+                    android:layout_marginStart="58dp"
+                    android:backgroundTint="@color/light_gray" />
 
                 <TextView
                     style="@style/SettingsHeight"
@@ -262,11 +279,11 @@
                     app:drawableStartCompat="@drawable/lock_square"
                     app:drawableTint="@color/dark_gray" />
 
-                <View
-                    android:layout_width="307dp"
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_gravity="end"
-                    android:background="@color/light_gray" />
+                    android:layout_marginStart="58dp"
+                    android:backgroundTint="@color/light_gray" />
 
                 <TextView
                     style="@style/SettingsHeight"
@@ -277,11 +294,11 @@
                     app:drawableStartCompat="@drawable/notification"
                     app:drawableTint="@color/dark_gray" />
 
-                <View
-                    android:layout_width="307dp"
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_gravity="end"
-                    android:background="@color/light_gray" />
+                    android:layout_marginStart="58dp"
+                    android:backgroundTint="@color/light_gray" />
 
                 <TextView
                     style="@style/SettingsHeight"
@@ -292,11 +309,11 @@
                     app:drawableStartCompat="@drawable/graph"
                     app:drawableTint="@color/dark_gray" />
 
-                <View
-                    android:layout_width="307dp"
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_gravity="end"
-                    android:background="@color/light_gray" />
+                    android:layout_marginStart="58dp"
+                    android:backgroundTint="@color/light_gray" />
 
                 <TextView
                     style="@style/SettingsHeight"
@@ -307,11 +324,11 @@
                     android:text="Power Saving"
                     app:drawableTint="@color/dark_gray" />
 
-                <View
-                    android:layout_width="307dp"
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_gravity="end"
-                    android:background="@color/light_gray" />
+                    android:layout_marginStart="58dp"
+                    android:backgroundTint="@color/light_gray" />
 
                 <TextView
                     style="@style/SettingsHeight"
@@ -322,11 +339,11 @@
                     app:drawableStartCompat="@drawable/folder"
                     app:drawableTint="@color/dark_gray" />
 
-                <View
-                    android:layout_width="307dp"
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_gravity="end"
-                    android:background="@color/light_gray" />
+                    android:layout_marginStart="58dp"
+                    android:backgroundTint="@color/light_gray" />
 
                 <TextView
                     style="@style/SettingsHeight"
@@ -337,11 +354,11 @@
                     app:drawableStartCompat="@drawable/devices"
                     app:drawableTint="@color/dark_gray" />
 
-                <View
-                    android:layout_width="307dp"
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_gravity="end"
-                    android:background="@color/light_gray" />
+                    android:layout_marginStart="58dp"
+                    android:backgroundTint="@color/light_gray" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -369,11 +386,11 @@
                         android:textColor="@color/theme" />
                 </LinearLayout>
 
-                <View
+                <com.google.android.material.divider.MaterialDivider
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
-                    android:layout_gravity="end"
-                    android:background="@color/light_gray" />
+                    android:backgroundTint="@color/light_gray" />
+
 
                 <TextView
                     style="@style/SettingsHeight"
@@ -383,11 +400,11 @@
                     android:text="Telegram Premium"
                     app:drawableStartCompat="@drawable/star" />
 
-                <View
+                <com.google.android.material.divider.MaterialDivider
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
-                    android:layout_gravity="end"
-                    android:background="@color/light_gray" />
+                    android:backgroundTint="@color/light_gray" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -414,11 +431,11 @@
                     app:drawableStartCompat="@drawable/chat_dots"
                     app:drawableTint="@color/dark_gray" />
 
-                <View
-                    android:layout_width="307dp"
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_gravity="end"
-                    android:background="@color/light_gray" />
+                    android:layout_marginStart="58dp"
+                    android:backgroundTint="@color/light_gray" />
 
                 <TextView
                     style="@style/SettingsHeight"
@@ -429,11 +446,11 @@
                     app:drawableStartCompat="@drawable/question"
                     app:drawableTint="@color/dark_gray" />
 
-                <View
-                    android:layout_width="307dp"
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_gravity="end"
-                    android:background="@color/light_gray" />
+                    android:layout_marginStart="58dp"
+                    android:backgroundTint="@color/light_gray" />
 
                 <TextView
                     style="@style/SettingsHeight"
