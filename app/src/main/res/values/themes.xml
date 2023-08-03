@@ -10,6 +10,8 @@
         <item name="android:gravity" >center_vertical </item>
     </style>
     <style name="ProfileIcons" parent="">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/Margin16dp</item>
         <item name="android:layout_marginEnd">@dimen/Margin16dp</item>
         <item name="android:layout_marginTop">@dimen/Margin16dp</item>
@@ -22,4 +24,65 @@
         <item name="cornerSize">50%</item>
         <item name="android:layout_marginTop">@dimen/Margin8dp</item>
     </style>
+    <style name="UserDetailsRegion">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="background">@color/white</item>
+    </style>
+    <style name="UserDetailsRegionChildrenWithoutDrawable">
+        <item name="android:layout_height">@dimen/FieldsHeight</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginStart">@dimen/Margin16dp</item>
+    </style>
+    <style name="UserDetailsRegionChildrenWithoutDrawable.gravity">
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="LargeDivider">
+        <item name="android:layout_height">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:tint">@color/light_gray</item>
+    </style>
+    <style name="MediumDivider">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginStart">@dimen/Margin16dp</item>
+        <item name="android:backgroundTint">@color/light_gray</item>
+    </style>
+    <style name="SmallDivider">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginStart">58dp</item>
+        <item name="android:backgroundTint">@color/light_gray</item>
+    </style>
+
+    <style name="SettingsTitles">
+    <item name="android:layout_height">@dimen/Margin24dp</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_marginStart">@dimen/Margin16dp</item>
+    <item name="android:layout_marginTop">@dimen/Margin8dp</item>
+    <item name="android:layout_gravity">center_vertical</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">@color/titles_color</item>
+</style>
+    <style name="UserDetailsRegionChildrenWithDrawable">
+        <item name="android:layout_height">@dimen/SettingsHeight</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginStart">@dimen/Margin16dp</item>
+        <item name="android:gravity" >center_vertical </item>
+       <item name="android:drawablePadding">@dimen/DrawablePadding</item>
+        <item name="android:textStyle">bold</item>
+        <item name="drawableTint">@color/dark_gray</item>
+    </style>
+    <style name="UserDetailsRegionChildrenWithDrawableStar">
+        <item name="android:layout_height">@dimen/SettingsHeight</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginStart">@dimen/Margin16dp</item>
+        <item name="android:gravity" >center_vertical </item>
+        <item name="android:drawablePadding">@dimen/DrawablePadding</item>
+        <item name="android:textStyle">bold</item>
+        <item name="drawableTint">@color/purple</item>
+    </style>
+
 </resources>

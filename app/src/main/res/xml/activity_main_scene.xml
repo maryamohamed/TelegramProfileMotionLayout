@@ -11,110 +11,15 @@
             motion:touchAnchorId="@+id/ProfileConstraint"
             motion:dragDirection="dragUp"
             motion:touchAnchorSide="bottom" />
+        <KeyFrameSet >
+            <KeyAttribute
+                motion:motionTarget="@+id/iv_profile_image"
+                motion:framePosition="30"
+                android:alpha="0" />
+        </KeyFrameSet>
     </Transition>
-
     <ConstraintSet android:id="@+id/start">
 
-        <Constraint
-            android:id="@+id/ProfileConstraint"
-            motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="240dp"
-            motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintStart_toStartOf="parent" />
-        <Constraint
-            android:id="@+id/iv_profile_image"
-            motion:layout_constraintEnd_toEndOf="@id/ProfileConstraint"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            motion:layout_constraintBottom_toBottomOf="@id/ProfileConstraint"
-            android:visibility="visible"
-            motion:layout_constraintVertical_bias="0.0"
-            motion:layout_constraintHorizontal_bias="1.0"
-            motion:layout_constraintTop_toTopOf="@id/ProfileConstraint"
-            motion:layout_constraintStart_toStartOf="@id/ProfileConstraint" />
-        <Constraint
-            android:id="@+id/endpoint_image"
-            motion:layout_constraintStart_toEndOf="@id/ic_back"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            motion:layout_constraintBottom_toBottomOf="@id/ic_back"
-            android:visibility="gone"
-            android:layout_marginStart="@dimen/Margin8dp" />
-        <Constraint
-            android:id="@+id/ic_three_dots"
-            motion:layout_constraintEnd_toEndOf="@id/ProfileConstraint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            motion:layout_goneMarginEnd="@dimen/Margin16dp"
-            motion:layout_constraintTop_toTopOf="@id/ProfileConstraint"
-            motion:layout_editor_absoluteX="227dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="16dp" />
-        <Constraint
-            android:id="@+id/ic_search"
-            motion:layout_constraintEnd_toStartOf="@+id/ic_three_dots"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            motion:layout_constraintBottom_toBottomOf="@+id/ic_three_dots"
-            android:visibility="gone"
-            android:layout_marginEnd="@dimen/Margin16dp"
-            motion:layout_constraintTop_toTopOf="@+id/ic_three_dots"
-            motion:layout_editor_absoluteY="43dp"
-            android:layout_marginTop="@dimen/Margin16dp"
-            motion:layout_editor_absoluteX="183dp" />
-        <Constraint
-            android:id="@+id/ic_qrcode"
-            motion:layout_constraintEnd_toStartOf="@+id/ic_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            motion:layout_constraintBottom_toBottomOf="@+id/ic_search"
-            android:visibility="visible"
-            android:layout_marginEnd="@dimen/Margin16dp"
-            motion:layout_constraintTop_toTopOf="@+id/ic_search"
-            motion:layout_editor_absoluteY="27dp"
-            android:layout_marginTop="@dimen/Margin16dp"
-            motion:layout_editor_absoluteX="205dp" />
-        <Constraint
-            android:id="@+id/ic_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            motion:layout_constraintTop_toTopOf="@id/ProfileConstraint"
-            motion:layout_constraintStart_toStartOf="@id/ProfileConstraint"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp" />
-        <Constraint
-            android:id="@+id/tv_Profile_name"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            motion:layout_constraintBottom_toTopOf="@id/tv_profile_status"
-            android:layout_marginStart="16dp"
-            motion:layout_constraintStart_toStartOf="@id/ProfileConstraint" />
-        <Constraint
-            android:id="@+id/tv_profile_status"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            motion:layout_constraintBottom_toBottomOf="@id/ProfileConstraint"
-            android:layout_marginBottom="@dimen/Margin16dp"
-            motion:layout_constraintStart_toStartOf="@id/tv_Profile_name" />
-        <Constraint
-            android:id="@+id/floating_action_button"
-            motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            motion:layout_constraintBottom_toBottomOf="@id/ProfileConstraint"
-            android:layout_marginEnd="@dimen/Margin16dp"
-            motion:layout_constraintTop_toBottomOf="@id/ProfileConstraint" />
-        <Constraint
-            android:id="@+id/main_scrollView"
-            motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintVertical_bias="0.003"
-            motion:layout_constraintTop_toBottomOf="@+id/ProfileConstraint"
-            motion:layout_constraintHorizontal_bias="1.0"
-            motion:layout_constraintStart_toStartOf="parent" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
@@ -138,7 +43,7 @@
             motion:layout_constraintStart_toStartOf="parent" >
             <CustomAttribute
                 motion:attributeName="backgroundColor"
-                motion:customColorValue="@color/PrimaryColor"/>
+                motion:customColorValue="@color/theme_color"/>
 
         </Constraint>
         <Constraint
@@ -149,7 +54,7 @@
             motion:layout_constraintBottom_toBottomOf="@id/ic_back"
             android:visibility="visible"
             android:layout_marginStart="@dimen/Margin16dp"
-            android:layout_marginTop="@dimen/Margin16dp"
+            android:layout_marginTop="20dp"
             motion:layout_constraintTop_toTopOf="@+id/ProfileConstraint"
             motion:layout_constraintEnd_toStartOf="@+id/tv_Profile_name" />
         <Constraint

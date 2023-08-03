@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="SettingsHeight">40dp</dimen>
+    <dimen name="SettingsHeight">45dp</dimen>
     <dimen name="TextSize8sp">8sp</dimen>
     <dimen name="TextSize16sp">16sp</dimen>
     <dimen name="TextSize24sp">24sp</dimen>
@@ -17,4 +17,5 @@
     <dimen name="Margin64dp">64dp</dimen>
     <dimen name="FieldsHeight">32dp</dimen>
     <dimen name="DrawablePadding">16dp</dimen>
+    <dimen name="profileConstrainHeight">240dp</dimen>
 </resources>

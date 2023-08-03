@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ProfileConstraint"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="@dimen/profileConstrainHeight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,7 +19,7 @@
     <ImageView
         android:id="@+id/iv_profile_image"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/profileConstrainHeight"
         android:scaleType="centerCrop"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@id/ProfileConstraint"
@@ -28,7 +28,8 @@
         app:layout_constraintStart_toStartOf="@id/ProfileConstraint"
         app:layout_constraintTop_toTopOf="@id/ProfileConstraint"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/photo" />
+        app:srcCompat="@drawable/profile_photo"
+        android:contentDescription="@string/profile_image" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/endpoint_image"
@@ -36,7 +37,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="@dimen/Margin8dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/photo"
+        android:src="@drawable/profile_photo"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/ic_back"
         app:layout_constraintStart_toEndOf="@id/ic_back"
@@ -44,58 +45,49 @@
 
     <ImageView
         android:id="@+id/ic_three_dots"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/ProfileIcons"
         app:layout_constraintEnd_toEndOf="@id/ProfileConstraint"
         app:layout_constraintTop_toTopOf="@id/ProfileConstraint"
         app:srcCompat="@drawable/dots_three_vertical"
-        tools:layout_editor_absoluteX="227dp" />
+        android:contentDescription="@string/three_dots_icon" />
 
     <ImageView
         android:id="@+id/ic_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/Margin16dp"
-        android:layout_marginEnd="@dimen/Margin16dp"
+        style="@style/ProfileIcons"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/ic_three_dots"
         app:layout_constraintEnd_toStartOf="@+id/ic_three_dots"
         app:layout_constraintTop_toTopOf="@+id/ic_three_dots"
-        app:srcCompat="@drawable/searchicon"
-        tools:layout_editor_absoluteX="183dp"
-        tools:layout_editor_absoluteY="43dp" />
+        app:srcCompat="@drawable/search_icon"
+        android:contentDescription="@string/search_icon" />
 
 
     <ImageView
         android:id="@+id/ic_qrcode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/Margin16dp"
-        android:layout_marginTop="@dimen/Margin16dp"
+        style="@style/ProfileIcons"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/ic_search"
         app:layout_constraintEnd_toStartOf="@+id/ic_search"
         app:layout_constraintTop_toTopOf="@+id/ic_search"
         app:srcCompat="@drawable/qrcode"
-        tools:layout_editor_absoluteX="205dp"
-        tools:layout_editor_absoluteY="27dp" />
+        android:contentDescription="@string/qr_code_icon" />
 
     <ImageView
         android:id="@+id/ic_back"
         style="@style/ProfileIcons"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@id/ProfileConstraint"
         app:layout_constraintTop_toTopOf="@id/ProfileConstraint"
-        app:srcCompat="@drawable/backspace" />
+        app:srcCompat="@drawable/backspace"
+        android:contentDescription="@string/back_icon" />
 
     <TextView
         android:id="@+id/tv_Profile_name"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:text="Maryam Mohamed"
+        android:layout_marginStart="@dimen/Margin16dp"
+        android:text="@string/ProfileName"
         android:textColor="@color/white"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/tv_profile_status"
         app:layout_constraintStart_toStartOf="@id/ProfileConstraint" />
 
@@ -104,7 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginBottom="@dimen/Margin16dp"
-        android:text="online"
+        android:text="@string/ProfileStatus"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@id/ProfileConstraint"
         app:layout_constraintStart_toStartOf="@id/tv_Profile_name" />
@@ -114,14 +106,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/Margin16dp"
-        android:contentDescription="TODO"
         android:src="@drawable/camera_plus"
         app:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="@id/ProfileConstraint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ProfileConstraint"
         app:shapeAppearanceOverlay="@style/FloatingActionCorners"
-        app:tint="@color/dark_gray" />
+        app:tint="@color/dark_gray"
+        android:contentDescription="@string/floating_action" />
 
 
     <ScrollView
@@ -147,10 +139,8 @@
             app:layout_constraintTop_toBottomOf="@+id/iv_profile_image">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="vertical">
+                style="@style/UserDetailsRegion"
+                android:background="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -158,246 +148,163 @@
                     android:layout_marginStart="@dimen/Margin16dp"
                     android:layout_marginTop="@dimen/Margin8dp"
                     android:gravity="center_vertical"
-                    android:text="Account"
-                    android:textColor="@color/theme" />
+                    android:text="@string/account"
+                    android:textColor="@color/titles_color" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/FieldsHeight"
-                    android:layout_marginStart="@dimen/Margin16dp"
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/UserDetailsRegionChildrenWithoutDrawable"
                     android:gravity="center_vertical"
-                    android:text="+201023524084" />
+                    android:textStyle="bold"
+                    android:text="@string/ProfileNumber" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/FieldsHeight"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:text="Tap to change Phone Number"
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/UserDetailsRegionChildrenWithoutDrawable"
+                    android:text="@string/ChangeNumberText"
                     android:textColor="@color/dark_gray" />
 
                 <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="@dimen/Margin16dp" />
-                <!--                <View-->
-                <!--                    android:layout_width="340dp"-->
-                <!--                    android:layout_height="1dp"-->
-                <!--                    android:layout_gravity="end"-->
-                <!--                    android:background="@color/light_gray" />-->
+                    style="@style/MediumDivider" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="vertical">
+                style="@style/UserDetailsRegion"
+                android:background="@color/white">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/FieldsHeight"
-                    android:layout_marginStart="@dimen/Margin16dp"
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/UserDetailsRegionChildrenWithoutDrawable"
                     android:gravity="center_vertical"
+                    android:textStyle="bold"
                     android:text="@string/username" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/FieldsHeight"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:text="Username"
+                <com.google.android.material.textview.MaterialTextView
+                   style="@style/UserDetailsRegionChildrenWithoutDrawable"
+                    android:text="@string/usernameText"
                     android:textColor="@color/dark_gray" />
 
                 <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:backgroundTint="@color/light_gray" />
+                    style="@style/MediumDivider" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="vertical">
+                style="@style/UserDetailsRegion"
+                android:background="@color/white">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/FieldsHeight"
-                    android:layout_marginStart="@dimen/Margin16dp"
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/UserDetailsRegionChildrenWithoutDrawable"
                     android:gravity="center_vertical"
-                    android:text=" 𝒑𝒆𝒓𝒔𝒐𝒏 𝒊𝒔 𝒍𝒊𝒌𝒆 𝒘𝒉𝒂𝒕 𝒉𝒆 𝒍𝒐𝒗𝒆𝒔⁦ °•✯ " />
+                    android:textStyle="bold"
+                    android:text="@string/ProfileBio" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/FieldsHeight"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:text="Bio"
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/UserDetailsRegionChildrenWithoutDrawable"
+                    android:text="@string/BioText"
                     android:textColor="@color/dark_gray" />
 
             </LinearLayout>
 
             <com.google.android.material.divider.MaterialDivider
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                style="@style/LargeDivider"/>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="vertical">
+                style="@style/UserDetailsRegion"
+                android:background="@color/white">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/Margin24dp"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:layout_marginTop="@dimen/Margin8dp"
-                    android:gravity="center_vertical"
-                    android:text="Settings"
-                    android:textColor="@color/theme" />
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/SettingsTitles"
+                    android:text="@string/settingsText" />
 
-                <TextView
-                    style="@style/SettingsHeight"
-                    android:layout_width="match_parent"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:drawablePadding="@dimen/DrawablePadding"
-                    android:text="Chat Settings"
-                    app:drawableStartCompat="@drawable/chat_round"
-                    app:drawableTint="@color/dark_gray" />
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/UserDetailsRegionChildrenWithDrawable"
+                    android:text="@string/chat_settings_text"
+                    app:drawableStartCompat="@drawable/chat_round" />
 
                 <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="58dp"
-                    android:backgroundTint="@color/light_gray" />
+                    style="@style/SmallDivider"/>
 
-                <TextView
-                    style="@style/SettingsHeight"
-                    android:layout_width="match_parent"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:drawablePadding="@dimen/DrawablePadding"
-                    android:text="Privacy and Security"
-                    app:drawableStartCompat="@drawable/lock_square"
-                    app:drawableTint="@color/dark_gray" />
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/UserDetailsRegionChildrenWithDrawable"
+                    android:text="@string/privacy_and_security_text"
+                    app:drawableStartCompat="@drawable/lock_square" />
 
                 <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="58dp"
-                    android:backgroundTint="@color/light_gray" />
+                    style="@style/SmallDivider"/>
 
-                <TextView
-                    style="@style/SettingsHeight"
-                    android:layout_width="match_parent"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:drawablePadding="@dimen/DrawablePadding"
-                    android:text="Notifications and Sounds"
-                    app:drawableStartCompat="@drawable/notification"
-                    app:drawableTint="@color/dark_gray" />
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/UserDetailsRegionChildrenWithDrawable"
+                    android:text="@string/notifications_and_sounds_text"
+                    app:drawableStartCompat="@drawable/notification" />
 
                 <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="58dp"
-                    android:backgroundTint="@color/light_gray" />
+                    style="@style/SmallDivider"/>
 
-                <TextView
-                    style="@style/SettingsHeight"
-                    android:layout_width="match_parent"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:drawablePadding="@dimen/DrawablePadding"
-                    android:text="Data and Storage"
-                    app:drawableStartCompat="@drawable/graph"
-                    app:drawableTint="@color/dark_gray" />
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/UserDetailsRegionChildrenWithDrawable"
+                    android:text="@string/data_and_storage_text"
+                    app:drawableStartCompat="@drawable/graph"/>
 
                 <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="58dp"
-                    android:backgroundTint="@color/light_gray" />
+                    style="@style/SmallDivider"/>
 
-                <TextView
-                    style="@style/SettingsHeight"
-                    android:layout_width="match_parent"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:drawableStart="@drawable/battery_charging"
-                    android:drawablePadding="@dimen/DrawablePadding"
-                    android:text="Power Saving"
-                    app:drawableTint="@color/dark_gray" />
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/UserDetailsRegionChildrenWithDrawable"
+                    android:text="@string/power_saving_text"
+                    app:drawableStartCompat="@drawable/battery_charging" />
 
                 <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="58dp"
-                    android:backgroundTint="@color/light_gray" />
+                    style="@style/SmallDivider"/>
 
-                <TextView
-                    style="@style/SettingsHeight"
-                    android:layout_width="match_parent"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:drawablePadding="@dimen/DrawablePadding"
-                    android:text="Chat Folders"
-                    app:drawableStartCompat="@drawable/folder"
-                    app:drawableTint="@color/dark_gray" />
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/UserDetailsRegionChildrenWithDrawable"
+                    android:text="@string/chat_folders_text"
+                    app:drawableStartCompat="@drawable/folder"/>
 
                 <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="58dp"
-                    android:backgroundTint="@color/light_gray" />
+                    style="@style/SmallDivider"/>
 
-                <TextView
-                    style="@style/SettingsHeight"
-                    android:layout_width="match_parent"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:drawablePadding="@dimen/DrawablePadding"
-                    android:text="Devices"
-                    app:drawableStartCompat="@drawable/devices"
-                    app:drawableTint="@color/dark_gray" />
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/UserDetailsRegionChildrenWithDrawable"
+                    android:text="@string/devices_text"
+                    app:drawableStartCompat="@drawable/devices" />
 
                 <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="58dp"
-                    android:backgroundTint="@color/light_gray" />
+                    style="@style/SmallDivider"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="@dimen/SettingsHeight"
                     android:orientation="horizontal"
                     android:weightSum="2">
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         style="@style/SettingsHeight"
                         android:layout_width="0dp"
                         android:layout_marginStart="@dimen/Margin16dp"
                         android:layout_weight="1"
+                        android:textStyle="bold"
                         android:drawablePadding="@dimen/DrawablePadding"
-                        android:text="Language"
+                        android:text="@string/language_text"
                         app:drawableStartCompat="@drawable/language"
                         app:drawableTint="@color/dark_gray" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         style="@style/SettingsHeight"
                         android:layout_width="0dp"
                         android:layout_marginEnd="@dimen/Margin16dp"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="English"
-                        android:textColor="@color/theme" />
+                        android:textStyle="bold"
+                        android:text="@string/english_text"
+                        android:textColor="@color/titles_color" />
                 </LinearLayout>
 
                 <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:backgroundTint="@color/light_gray" />
+                    style="@style/LargeDivider"/>
 
 
-                <TextView
-                    style="@style/SettingsHeight"
-                    android:layout_width="match_parent"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:drawablePadding="@dimen/DrawablePadding"
-                    android:text="Telegram Premium"
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/UserDetailsRegionChildrenWithDrawableStar"
+                    android:text="@string/telegram_premium_text"
                     app:drawableStartCompat="@drawable/star" />
 
                 <com.google.android.material.divider.MaterialDivider
@@ -408,68 +315,43 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="vertical">
+                style="@style/UserDetailsRegion"
+                android:background="@color/white">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/Margin24dp"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:layout_marginTop="@dimen/Margin8dp"
-                    android:gravity="center_vertical"
-                    android:text="Help"
-                    android:textColor="@color/theme" />
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/SettingsTitles"
+                    android:text="@string/helpText" />
 
-                <TextView
-                    style="@style/SettingsHeight"
-                    android:layout_width="match_parent"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:drawablePadding="@dimen/DrawablePadding"
-                    android:text="Ask a Question"
-                    app:drawableStartCompat="@drawable/chat_dots"
-                    app:drawableTint="@color/dark_gray" />
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/UserDetailsRegionChildrenWithDrawable"
+                    android:text="@string/ask_a_question_text"
+                    app:drawableStartCompat="@drawable/chat_dots" />
 
                 <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="58dp"
-                    android:backgroundTint="@color/light_gray" />
+                    style="@style/SmallDivider"/>
 
-                <TextView
-                    style="@style/SettingsHeight"
-                    android:layout_width="match_parent"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:drawablePadding="@dimen/DrawablePadding"
-                    android:text="Telegram FAQ"
-                    app:drawableStartCompat="@drawable/question"
-                    app:drawableTint="@color/dark_gray" />
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/UserDetailsRegionChildrenWithDrawable"
+                    android:text="@string/telegram_faq_text"
+                    app:drawableStartCompat="@drawable/question" />
 
                 <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="58dp"
-                    android:backgroundTint="@color/light_gray" />
+                    style="@style/SmallDivider"/>
 
-                <TextView
-                    style="@style/SettingsHeight"
-                    android:layout_width="match_parent"
-                    android:layout_marginStart="@dimen/Margin16dp"
-                    android:drawablePadding="@dimen/DrawablePadding"
-                    android:text="Privacy Policy"
-                    app:drawableStartCompat="@drawable/shield_check"
-                    app:drawableTint="@color/dark_gray" />
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/UserDetailsRegionChildrenWithDrawable"
+                    android:text="@string/privacy_policy_text"
+                    app:drawableStartCompat="@drawable/shield_check" />
 
             </LinearLayout>
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="@dimen/Margin8dp"
                 android:layout_marginBottom="@dimen/Margin8dp"
                 android:gravity="center"
-                android:text="Telegram for Android v9.6.7 (3363) store bundled arm64-v8a"
+                android:text="@string/telegram_for_android"
                 android:textColor="@color/dark_gray"
                 android:textSize="@dimen/TextSize16sp" />
         </LinearLayout>
